@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.hebtu.software.peace">
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".myclock.MyClock">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="RING"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RingActivity">
+        </activity>
+        <activity android:name=".RemindActivity"/>
+        <receiver android:name=".RingReceived">
+            <intent-filter>
+                <action android:name="cn.edu.hebtu.software.peace.RING"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".myclock.SetMusicActivity" />
+        <activity android:name=".myclock.AlarmActivity" />
+        <!-- android:process=":remote": 新开一个进程 -->
+        <receiver android:name=".myclock.AlarmReceiver" android:process=":remote"/>
+        <service
+            android:name=".myclock.PlayMusicService">
+            <intent-filter >
+                <action android:name="com.service.test.Music"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <uses-library android:name="android.test.runner" />
+
+
+        <instrumentation
+            android:name="android.test.InstrumentationTestRunner"
+            android:label="Tests for My App"
+            android:targetPackage="cn.edu.hebtu.software.peace.test" />
+    </application>
+
+</manifest>

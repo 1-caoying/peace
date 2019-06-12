@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" 
+    >
+	<LinearLayout
+        android:layout_width="26dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.34"
+        android:orientation="vertical" 
+        >
+       <ImageView android:id="@+id/list_radioImg"  
+			android:layout_width="wrap_content"  
+			android:layout_height="wrap_content"  
+			android:layout_alignParentRight="true"/>
+	</LinearLayout>
+    <LinearLayout
+        android:layout_width="214dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.51"
+        android:orientation="vertical" >
+		
+        <TextView
+            android:id="@+id/musictitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFACD"
+            android:textSize="18px" />
+
+        <TextView
+            android:id="@+id/musicalbum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/musicsinger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="22dp"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/musictime"
+            android:layout_width="1dp"
+            android:layout_height="1dp" 
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/musicid"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:textColor="#000000" />
+        <TextView
+            android:id="@+id/musicurl"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    
+	
+</LinearLayout>

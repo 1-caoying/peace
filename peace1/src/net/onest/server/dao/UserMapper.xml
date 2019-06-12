@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace:映射器接口的全名 -->
+<mapper namespace="net.onest.server.dao.UserMapper">
+
+    <!-- 结果映射 -->
+    <resultMap type="User" id="userMap">
+        <id column="user_id" property="userId"></id>
+        <result column="user_phone" property="userPhone"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_sex" property="userSex"/>
+        <result column="user_birth" property="userBirth"/>
+    </resultMap>
+    
+    <!-- 映射select语句 -->
+    <select id="findAllUsers"  resultMap="userMap">
+           select * from user
+    </select>
+    <!--  resultType="net.onest.server.entity.User" parameterType="net.onest.server.entity.User" -->
+    <select id="queryByID" >
+    	select user_id, user_phone,user_name, user_sex,user_birth from user where user_id =#{userId}
+  	</select>
+    
+    <insert id="insertUser">
+        insert into user(user_phone,user_name,user_sex,user_birth)
+        values(#{userPhone},#{userName},#{userSex},#{userBirth})
+    </insert>
+    <select id="queryByPhone" resultType="net.onest.server.entity.User" parameterType="net.onest.server.entity.User">
+    	select user_id, user_phone,user_name, user_sex,user_birth from user where user_phone =#{userPhone}
+   
+    </select>
+    
+   
+</mapper>

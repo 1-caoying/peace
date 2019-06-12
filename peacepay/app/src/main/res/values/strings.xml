@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">peacepay</string>
+    <string name="title_activity_count_down">CountDownActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>
